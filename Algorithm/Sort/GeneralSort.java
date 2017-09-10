@@ -5,6 +5,12 @@ class Demo
 	{
 		System.out.println("----------------------");
 		int[] arr={12,124,534,-234,23,-47,234,7842,-9,1,0,0,-45789,1,3,-4};
+		int[] arr2 = new int[100];
+		// generate the array with random numbers
+		for(int i = 0 ; i < arr2.length ;i++)
+		{
+			arr2[i] = randomNumber(-100,300);
+		}
 		// int max = arr[0];
 		// for(int i = 0 ; i < arr.length; i++)
 		// {
@@ -16,10 +22,21 @@ class Demo
 		// System.out.println(max);
 		System.out.println("----------------------");
 		// System.out.println("Integer Max="+Integer.MAX_VALUE);
-		printArray(arr);
-		quickSort(arr,0,arr.length-1);
-		printArray(arr);
+		printArray(arr2);
+		quickSort(arr2,0,arr2.length-1);
+		printArray(arr2);
 
+	}
+
+	public static int randomNumber(int min, int max)
+	{
+		if(min > max)
+		{
+			int temp = min;
+			min = max;
+			max = temp;
+		}
+		return min+(int)(Math.random() * (max - min + 1));
 	}
 
 	//select sort algorithm
@@ -83,7 +100,9 @@ class Demo
 				wall++;
 			}
 		}
-		//we always don't know the comparison between pivot and num[wall]
+		//don't know the comparison between pivot and num[wall]
+		//compare the pivot with the wall
+		//always ensure pivot element will move to the end of the left part
 		if(wall <= end && num[wall] < pivot)
 			switchPosition(num, start , wall);
 		else

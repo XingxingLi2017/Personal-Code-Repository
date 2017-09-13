@@ -1,0 +1,14 @@
+Matlab workshop
+
+words rountine	
+
+review content of ML
+(Maximum Likelihood Estimation for uniform distribution) 
+(Principle Component Analysis, Whitening Transformation)
+
+achieve tutorial 5
+
+Pronunciation workshop
+
+5 solutions for LC
+

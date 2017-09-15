@@ -1,14 +1,7 @@
-Matlab workshop
+workout hitting back		(1.7h)
 
-words rountine	
+Matlab workshop		(1.5h)
 
-review content of ML
-(Maximum Likelihood Estimation for uniform distribution) 
-(Principle Component Analysis, Whitening Transformation)
+leetcode (2h)
 
-achieve tutorial 5
-
-Pronunciation workshop
-
-5 solutions for LC
-
+ETR	53%

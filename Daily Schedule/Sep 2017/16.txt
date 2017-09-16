@@ -1,0 +1,20 @@
+solution for LC
+
+review ML
+	principle component analysis: specific process
+	generative and discriminative model
+	mixture model
+	mixture estimation
+	EM-algorithm
+
+grading for the late students, create the late Execel
+
+grade weekly homework
+
+words rountine	
+
+achieve tutorial vedio 5
+
+Pronunciation workshop
+
+weekly comments of HCI

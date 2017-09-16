@@ -1,16 +1,15 @@
-review ML
-	principle component analysis: specific process
-	generative and discriminative model
-	mixture model
-	mixture estimation
-	EM-algorithm
+applying for SSN
+	9:00-14:00
 
-grading for the late students
+Grader Office hour	(2h)
+	14:30-16:30
 
-words rountine	
+nap	and dinner
+	18:00-21:20
 
-achieve tutorial vedio 5
+1st solution LC	(3h)
+	21:25- 0:35
+	review dfs, IP address
+	solve Restore IP Addresses
 
-Pronunciation workshop
-
-weekly comments of HCI
+ETR: 50%

@@ -1,20 +1,29 @@
-solution for LC
+2 solutions for LC	(2h)
+	11:00-13:00
+	Reverse String: review StringBuffer, JAVA access modifier
+	Reverse Vowels of String
+nap
+	13:00-16:20
 
-review ML
-	principle component analysis: specific process
-	generative and discriminative model
-	mixture model
-	mixture estimation
-	EM-algorithm
+words rountine	(0.7h)
+	16:25-17:07
 
-grading for the late students, create the late Execel
+grading for the late students, create the late Execel	(0.7h)
+	17:10 - 17:54
 
-grade weekly homework
+dinner
+	5:54-6:00
 
-words rountine	
+meeting with sister
+	6.30-7.40
 
-achieve tutorial vedio 5
+Gym hitting Chest	(1.5h)
+	7.41-9.17
 
-Pronunciation workshop
+Snack, extra meal
+	9.20-10.05
 
-weekly comments of HCI
+1 sulotion for LC	(1h)
+	10.05-10.52
+
+ETR: 59%

@@ -1,19 +1,21 @@
-review ML
-	principle component analysis: specific process
-	generative and discriminative model
-	mixture model
-	mixture estimation
-	EM-algorithm
+breakfast
+	11:30-11:50
 
+finish the exercise 3	(2h)
+	12:26-2:18
 
-grade weekly homework
+explain code to TA 	(1h)
+	2:20-3:20
 
-finish the exercise 3
-
-achieve tutorial video 5
-
-Pronunciation workshop
-
-weekly comments of HCI
+nap
+	3:30-6:00
 
 words rountine
+	6:10-6:44
+
+solutions for LC	(2.5)
+	10:13-12:42
+	Scramble String (Recursion && DP)
+	Roman to integer
+
+ETR: 55%

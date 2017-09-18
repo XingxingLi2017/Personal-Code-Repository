@@ -1,0 +1,16 @@
+review ML
+	principle component analysis: specific process
+	generative and discriminative model
+	mixture model
+	mixture estimation
+	EM-algorithm
+
+grade weekly homework
+
+achieve tutorial video 5-6
+
+Pronunciation workshop
+
+weekly comments of HCI
+
+words rountine

@@ -1,16 +1,21 @@
-review ML
-	principle component analysis: specific process
-	generative and discriminative model
-	mixture model
-	mixture estimation
-	EM-algorithm
+1 solution	(2h)
+	8:20-10:17
+	shortest palindrome-KMP
 
-grade weekly homework
+Nap and lunch
+	10:20-2:10	4h
 
-achieve tutorial video 5-6
+words rountine	(0.8h)	
+	2:10-3:00
 
-Pronunciation workshop
+solution (0.5h)
+	3:20- 3:50
+	simplify path- using stack and split function
 
-weekly comments of HCI
+grade weekly homework	(1h)
+	5:00 - 6:00
 
-words rountine
+software testing class	(2h)
+	7:10-9:00
+
+ETR: 63%

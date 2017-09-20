@@ -1,0 +1,19 @@
+weekly comments of HCI		(2h)
+	8:40-10:25
+
+review ML 	(0.5h)
+	3:00-3:30
+	principle component analysis: specific process
+	generative and discriminative model
+	lecture 6
+
+ML class	
+	how to use covariance matrix to produce eigen value
+
+HCL class
+
+
+grade HW 2	(1h)
+	8:16-9:11
+
+ETR: 35%

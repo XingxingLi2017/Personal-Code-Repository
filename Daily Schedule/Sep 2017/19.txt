@@ -12,7 +12,6 @@ ML class
 
 HCL class
 
-
 grade HW 2	(1h)
 	8:16-9:11
 

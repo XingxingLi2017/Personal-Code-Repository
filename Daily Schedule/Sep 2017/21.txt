@@ -1,0 +1,39 @@
+grading for Ex2	(1h)
+	9:40-10:37
+
+solutions (1h)
+	11:20-12:21
+	longest palindrome substring-Exhaust
+	longest palindrome	--Arrays.sort()
+
+grading for java module 1	(1h)
+	2:24-3:30
+
+ML class	(1.3h)
+	3:40-5:00
+
+
+======================================
+split students into three groups
+
+review ML 
+	principle component analysis: specific process
+	generative and discriminative model
+	lecture 6
+
+ML HW problem set 1
+
+software testing HW
+	Junit test jar
+	JUnit test exercise
+
+HCI homework
+
+weekly comments of HCI
+
+------------
+achieve tutorial video 5-6
+
+Pronunciation workshop
+
+words rountine

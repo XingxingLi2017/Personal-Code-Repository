@@ -1,13 +1,12 @@
-grading		(1h)
-	1:30-2:22
+ML review L6	(4.7h)
+	12:34-1:20
+	2:20-6:19
+	PCA review
 
-nap
-	2:22-3:46
+Software Testing	(2.5h)
+	7:10-9:40
 
-software testing HW (2h)
-	4:00 - 6:00	
-	Junit test jar
-	JUnit test exercise
+etr: 72%
 
 
 =================================
@@ -20,11 +19,9 @@ review ML
 
 ML HW problem set 1
 
-software testing HW
-	Junit test jar
-	JUnit test exercise
+HCI user profile
 
-HCI homework
+HCI topic of thesis
 
 weekly comments of HCI
 

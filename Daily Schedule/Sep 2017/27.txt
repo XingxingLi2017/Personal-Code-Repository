@@ -1,0 +1,28 @@
+see a doctor
+	have brunch
+	9:00-10:40
+
+weekly comments of HCI	(3.5h)
+	13:55-16:23
+
+
+
+
+=================================
+HCI topic of thesis
+
+review ML for quiz 1
+
+review ML 
+	PCA review: remaining work->process of SVD and eigon decomposition
+	generative and discriminative model
+	lecture 6
+	lecture 7
+
+ML HW problem set 1
+----------------------------------
+achieve tutorial video 6
+
+Pronunciation workshop
+
+words rountine

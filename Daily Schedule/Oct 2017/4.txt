@@ -1,0 +1,27 @@
+words rountine
+	2:45-4:00		(1.25h)
+
+Pronunciation workshop
+	4:10- 5:20		(1h)
+
+Mid-Autumn Festival
+	5:45-11:00
+
+
+=================================
+review ML 
+	PCA review: remaining work->process of SVD and eigon decomposition
+	generative and discriminative model
+	L6-L9
+
+revise resume
+
+HCI Task Description
+----------------------------------
+achieve tutorial video 6
+
+Pronunciation workshop
+
+words rountine
+
+LC

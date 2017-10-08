@@ -6,6 +6,7 @@ rivese resume
 
 
 
+
 =================================
 review ML 
 	PCA review: remaining work->process of SVD and eigon decomposition
@@ -13,6 +14,7 @@ review ML
 	L6-L9
 
 revise resume
+	remaining work: from project experience to the end
 
 Python tutorial
 

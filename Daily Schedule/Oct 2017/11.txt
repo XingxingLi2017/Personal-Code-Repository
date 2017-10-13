@@ -1,0 +1,29 @@
+revised resume-3
+apply for the position of twitter
+apply for two positions in SE
+(1:30 - 3:15)		[1.75h]
+
+python tutorial
+	3:15-6:35		[3.3h]
+	begin from file I/O
+
+
+
+
+=================================
+review ML 
+	PCA review: remaining work->process of SVD and eigon decomposition
+	generative and discriminative model
+	L6-L9
+
+Python tutorial
+
+HCI Task Description
+----------------------------------
+achieve tutorial video 6
+
+Pronunciation workshop
+
+words routine
+
+LC

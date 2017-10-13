@@ -1,0 +1,27 @@
+Python tutorial
+	4:00-6:30	(1.5h)
+	data types, control flow
+python tutorial
+	8:00-9:00	(1h)
+
+python tutorial
+	11:00 - 12:00
+	file I/O
+
+=================================
+review ML 
+	PCA review: remaining work->process of SVD and eigon decomposition
+	generative and discriminative model
+	L6-L9
+
+Python tutorial
+
+HCI Task Description
+----------------------------------
+achieve tutorial video 6
+
+Pronunciation workshop
+
+words routine
+
+LC

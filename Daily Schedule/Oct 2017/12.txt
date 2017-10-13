@@ -1,0 +1,27 @@
+codecademy python
+	7:00-9:15
+
+ML course
+
+codecademy python
+	7:30-9:30
+
+workout
+
+=================================
+review ML 
+	PCA review: remaining work->process of SVD and eigon decomposition
+	generative and discriminative model
+	L6-L9
+
+Python tutorial
+
+HCI Task Description
+----------------------------------
+achieve tutorial video 6
+
+Pronunciation workshop
+
+words routine
+
+LC

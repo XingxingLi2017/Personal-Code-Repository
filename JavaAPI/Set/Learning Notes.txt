@@ -1,0 +1,85 @@
+Collection
+
+1: 添加:
+	boolean add(E e);
+	boolean addAll(Collection<? extends E> c);
+
+2: 删除
+	boolean remove(Object obj);
+	boolean removeAll(Collection<?> c);		//remove all the elements in Collection c
+	void clear();							//remove all the elements in the collection
+
+3: 判断
+	boolean contains(Object o);
+	boolean containsAll(Collection<?> c);	//true if the collection contains all the elements in c
+	boolean isEmpty(); 
+
+4: 获取
+	int size();
+		//Iterator: the special thing to get the elements of collection
+	Iterator<E> iterator();
+	
+5: 其他:
+	boolean retainAll(Collection<?> c); // get the intersection of the collection
+	Object[] toArray();
+============================================================
+
+Iterator: 
+	The general interface to obtain the elements in the collection. The subclass usually has an inner class to implement it.
+	
+	for(Iterator<E> tr = Collection<E>.iterator(); tr.hasNext();)
+	{
+		E e = tr.next();
+	}	
+	
+	WARNING: When we use Iterator , we can't use set operation to modify the underlying collection
+	SOLUTION: ListIterator-> designed for List
+===========================================================
+Collection:
+	|--List:
+		a. ordered
+		b. has duplicated element
+	|--Set:
+		a. can't have duplicated element
+		b. usually is unordered.
+===========================================================
+List: Specialty
+	1. 添加
+		void add(int index, E element);
+		boolean addAll(int index, Collection<? extends E> c);
+		
+	2. 删除
+		E remove(int index);
+	3. 判断
+	
+	4. 获取
+		E get(int index);
+		int indexOf(Object o);
+		int lastIndexOf(Object o);
+	5. 其他	
+		E set(int index, E element);
+		List<E> subList(int fromIndex, int toIndex);
+		ListIterator<E> listIterator();
+List:
+	|--Vector: 
+			1. appear earliest, before List
+			2. thread-safe
+	|--ArrayList: 
+			1. substitute of vector 
+			2. asynchronous
+	|--LinkedList:
+			1. linked list data structure
+			2. asynchronous
+===========================================================
+Set:
+	|--HashSet: 
+			1. data structure: HashMap
+			2. asynchronous
+	|--TreeSet:
+==========================================================
+HashSet:
+	
+
+
+	
+		

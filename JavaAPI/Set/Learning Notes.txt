@@ -23,7 +23,6 @@ Collection
 	boolean retainAll(Collection<?> c); // get the intersection of the collection
 	Object[] toArray();
 ============================================================
-
 Iterator: 
 	The general interface to obtain the elements in the collection. The subclass usually has an inner class to implement it.
 	
@@ -73,12 +72,24 @@ List:
 ===========================================================
 Set:
 	|--HashSet: 
-			1. data structure: HashMap
-			2. asynchronous
 	|--TreeSet:
 ==========================================================
 HashSet:
-	
+	|--LinkedHashSet
+		1. underlying data structure: HashMap
+		2. use hashCode() and equals() to dicide if two objects are same 
+		3. asynchronous
+==========================================================
+LinkedHashSet
+	1: ordered hash set based on double linked list among entries
+	2: get() and put() still use HashMap. Only the iteration is influenced
+==========================================================
+TreeSet:
+	1: can be ordered based on customized comparator or element implement Comparable interface
+	2: priority: comparator > comparable
+	3: underlying data structure: TreeMap-> red-black tree
+	4: if comparetor return 0, tree map think the two objects are the same. cover the previous one.
+
 
 
 	

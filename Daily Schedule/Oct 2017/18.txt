@@ -1,7 +1,5 @@
-Java Set part
-	next->Map
 LC
-	repeated String Match
+	Interleaving String
 
 
 =================================
@@ -10,9 +8,7 @@ review ML
 	generative and discriminative model
 	L6-L9
 
-Python tutorial
 
-HCI Task Description
 HCI weekly comments
 ----------------------------------
 achieve tutorial video 6

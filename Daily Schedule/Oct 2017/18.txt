@@ -1,20 +1,4 @@
 LC
-	Interleaving String
+	Interleaving String	(DP problem)
 
 
-=================================
-review ML 
-	PCA review: remaining work->process of SVD and eigon decomposition
-	generative and discriminative model
-	L6-L9
-
-
-HCI weekly comments
-----------------------------------
-achieve tutorial video 6
-
-Pronunciation workshop
-
-words routine
-
-LC

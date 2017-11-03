@@ -178,11 +178,11 @@ print('')
 
 list3 = [112,324,5,45,65,34,2,5]
 
-for y in list3:
+for y in list3:		# foreach loop
     print(y, " ")
     if y == 5:
         break
-for i in range(0, 5):
+for i in range(0, 5):	# normal loop
     for j in range(0, i):
         print("-", end="")
     for k in range(i, 5):

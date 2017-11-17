@@ -1,6 +1,34 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+'''
+Expectation-Maximization Algorithm:
+Usage:
+	In mixture model, there are multiple processes to produce the data points.
+	We want to figure out which process produces the data point that we are interested in.
+	If we know the parameters of distributions on the processes, we can simply get the probabilities 
+	of the data point in each process. Then we can pick up the most likely process as the classification of the data point
+	But now we don't know about the underlying distribution, so we need to learn the parameters based on the training data set
+
+Steps: (example distribution: Spherical Gaussian Function)
+	initialize the parameters of each distribution (there are k distributions)
+	while iteration < max:
+		// Estimate posterior probability
+		for i in range(n):
+			R[i,k] = [weight[k]*Function[k](X[i])]/sum(R[i,0->k])	// Beyes' Rule, P(Y=k|x) = [P(x|Y=k)P(Y=k)]/ P(x)
+																// P(x) = sum(P(x|Y=j)P(Y=j)), P(x|Y=k) = F(x)
+		log_likelihood=sum(sum(R[i,0->k]))
+		N[k]=sum(R[0->n,k])
+
+		// Maximization, equations comes from partial derivative: dG(x)/du, dG/ds
+		for k in range(k)
+			u[k]=1/N[k] * sum(i=0->n,X[i]*R[i,k])
+			wight[k] = N[k]/n
+			sigma[k]= 1/(N[k]*colum) * sum(i=0->n, R[i,k]* ||X[i]-u[k]||^2)
+			
+'''
+
+
 class GaussianEM:
     def __init__(self, k = 3, eps = 0.0000001, sig = 1):
         self.k = k

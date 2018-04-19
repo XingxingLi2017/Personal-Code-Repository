@@ -1,4 +1,0 @@
-LC
-	Interleaving String	(DP problem)
-
-

@@ -1,9 +1,0 @@
-solution 1	(1.5h)
-	10:40-12:10
-	string to Integer: process overflow
-
-grade for student	(1.5h)
-	15:14- 16:46
-	Module 3
-	Ex2
-ETR： 30%

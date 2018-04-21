@@ -28,6 +28,7 @@ public class HashMapDemo {
 					increment = rand.nextInt(58);
 				sb.append(""+(char)(value+increment));
 			}
+			// for map, add is put(key, value)
 			hashmap.put(key, sb.toString());
 		}
 		

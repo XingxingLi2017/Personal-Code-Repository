@@ -1,4 +1,0 @@
-1. review sort algorithm and implement several sort algorithms
-2. review the ways of producing random numbers
-3. grade the students' homework C Module 1
-4. complete the words rountine(100)

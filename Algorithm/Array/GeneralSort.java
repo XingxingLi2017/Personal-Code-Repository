@@ -4,24 +4,14 @@ class Demo
 	public static void main(String[] args)
 	{
 		System.out.println("----------------------");
-		int[] arr={12,124,534,-234,23,-47,234,7842,-9,1,0,0,-45789,1,3,-4};
 		int[] arr2 = new int[100];
 		// generate the array with random numbers
 		for(int i = 0 ; i < arr2.length ;i++)
 		{
 			arr2[i] = randomNumber(-100,300);
 		}
-		// int max = arr[0];
-		// for(int i = 0 ; i < arr.length; i++)
-		// {
-		// 	if(arr[i] > max)
-		// 	{
-		// 		max = arr[i];
-		// 	}
-		// }
-		// System.out.println(max);
 		System.out.println("----------------------");
-		// System.out.println("Integer Max="+Integer.MAX_VALUE);
+
 		printArray(arr2);
 		quickSort(arr2,0,arr2.length-1);
 		printArray(arr2);
@@ -50,9 +40,6 @@ class Demo
 				if(num[i] > num[j])
 					switchPosition(num, i , j);
 			}
-			// System.out.println("--------------------------");
-			// printArray(num);
-			// System.out.println("--------------------------");
 		}
 	}
 
@@ -67,9 +54,6 @@ class Demo
 				if(num[j] >num[j+1])
 					switchPosition(num, j, j+1);
 			}
-			// System.out.println("--------------------------");
-			// printArray(num);
-			// System.out.println("--------------------------");
 		}
 	}
 
@@ -107,11 +91,6 @@ class Demo
 			switchPosition(num, start , wall);
 		else
 			switchPosition(num, start,wall-1);
-		// System.out.println("==============================");
-		// System.out.println("pivot is:"+ pivot+"");
-		// System.out.println("array after partition is:");
-		// printArray(num, start, end);
-		// System.out.println("==============================");
 
 		return wall;
 	}
@@ -122,6 +101,8 @@ class Demo
 		num[index1]=num[index2];
 		num[index2]=temp;
 	}
+
+	// auxiliary method for printing
 
 	public static void printArray(int[] num)
 	{

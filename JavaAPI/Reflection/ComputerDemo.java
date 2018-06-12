@@ -16,7 +16,7 @@ public class ComputerDemo {
         FileInputStream fis = new FileInputStream(profile);
         properties.load(fis);
         fis.close();
-        // traverse profile to find the classes and get the instance
+        // traverse profile to find the classes'name and get the instance
         Set<String> keys = properties.stringPropertyNames();
         for(Iterator<String> itr = keys.iterator() ; itr.hasNext() ;){
             String key = itr.next();

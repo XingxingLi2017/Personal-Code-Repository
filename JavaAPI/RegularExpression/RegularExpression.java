@@ -1,11 +1,12 @@
+import java.util.regex.*;
 public class RegularExpression {
+
 	public static void main(String[] args) {
         // matches
         String message = "13508252621";
         String regex = "1[358]\\d{9}";
         System.out.println(message.matches(regex));
         System.out.println("---------------------");
-
 
         // split
         // specify the separator use regular expression
@@ -40,16 +41,18 @@ public class RegularExpression {
 
         // get
         String s4 = "da jia hao, ming tian bu fang jia!";
-
-        regex = "[a-z]{3}";
+        System.out.println(s4);
+        regex = "\\b[a-z]{3}\\b";
+        // 1. use Pattern to encapulate regular expression
         Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher("aaaaaaaaa");
+        // 2. get the pattern's matcher
+        Matcher m = p.matcher(s4);
+        
+        // 3. perform find/look at/matches to match the regex
         while(m.find())
         {
-            System.out.println(m.group());
-        }
-
-
+        	// star() and end() can get the previous match boundary
+            System.out.println(m.start()+": "+m.group()+": "+m.end());
+        }   
     }
-
 }

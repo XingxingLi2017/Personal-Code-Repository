@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+  /*order matters.*/
+  	/*pseudo class*/
+  	a:hover{
+  		font-size: 40px;
+  		color: grey;
+  	}
+  	a:link{
+  		color: red;
+  	}
+
+  	a:active{
+  		color: blue;
+  	}
+
+  	a:visited{
+  		color: mediumseagreen;
+  	}
+
+  	/*pseudo element*/
+  	p::first-letter{
+  		font-size: 30px;
+  		color: lightpink;
+  	}
+  	p:first-child{
+  		background-color: #369047; 
+  	}
+
+
+    .top-p{
+      background-color: orange;
+    }
+    p{
+      color: #ff6347; 
+      width: 200px;
+      height: 100px;
+      background-color: slateblue;
+      font-family: sans-serif;
+      font-size: 18;
+      font-style: italic;
+      /*
+      i'm a comment
+      */
+    }
+    #p2{
+      background-color: violet;
+    }
+
+  </style>
+</head>
+<body>
+  <p>I am a paragraph</p>
+  <p class = "top-p">p1 p1</p>
+  <p class = "top-p" id = "p2">p2 p2</p>
+  <p >p3 p3</p>
+  <div><a href="#">hyperlink 1, click me.</a></div>
+  <div><a href="#">hyperlink 2, click me.</a></div>
+  <div><a href="#">hyperlink 3, click me.</a></div>
+  <div class = "paragraphs">
+  	<p>I'm p1, the first one.</p>
+  	<p>I'm p2, the second one.</p>
+  	<p>I'm p3, the third one.</p>
+  <div>
+</body>
+</html>

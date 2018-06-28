@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Test</title>
+    <link rel="stylesheet" type="text/css" href="styles/master.css">
+    <style media="screen" type="text/css">
+      div{
+        background: #DF574B;
+        color: white;
+      }
+    </style>
+
+  </head>
+  <body>
+    <!-- four link ways -->
+    <dl class="">
+      <dt>link css to html file ways</dt>
+      <dd>style attr</dd>
+      <dd>{link} tag</dd>
+      <dd>{style} tag in {head}</dd>
+      <dd>@import url(link) in style sheet</dd>
+
+    </dl>
+
+    <div style="background-color: dodgerblue;color: white">
+      this is div 1.
+    </div>
+    <div class="div2">
+      this is div 2
+    </div>
+    <span>this is span 1</span>
+    <span>this is span 2</span>
+    <p>this is paragraph 1</p>
+    <p>this is paragraph 2</p>
+    <hr>
+    <!-- selector -->
+    <h2>selector in CSS</h2>
+    <ul>
+      <li>element</li>
+      <li>.class selector</li>
+      <li>#id</li>
+    </ul>
+    <p>predifined class can dynamically load styles</p>
+    <p>priority:<br>
+      tag &lt; .class  &lt; #id  &lt; style
+    </p>
+    <h3>combined selector</h3>
+    <p>look at notes in ONENOTE</p>
+    <hr>
+    <h3>hyperlink pseudo selector</h3>
+    <div class="hyperlinks">
+      <a href="#">click me to change style</a>
+    </div>
+    <hr>
+    <h3>:Focus pseudo element: {input:focus}</h3>
+    <input type="text" name="" value="">
+    <input type="text" name="" value="">
+    <hr>
+    <h3>Apply CSS</h3>
+    <ul>
+      <li>unordered list item</li>
+      <li>unordered list item</li>
+      <li>unordered list item</li>
+      <li>unordered list item</li>
+    </ul>
+    <hr>
+    <h3>Box Model & floating</h3>
+
+    <div id="div_1">
+      The 1st box
+    </div>
+    <div id="div_2">
+      The 2nd box, floating can let the words wrap the image.
+    </div>
+    <div id="div_3">
+      The 3rd box
+    </div>
+    <!-- clear the effects of floating -->
+    <hr style="clear: both">
+    <h3>Position Property</h3>
+    <div class="div4">
+      box 4 <br>
+      absolute position.
+    </div>
+    <div class="div5">
+      box5
+      relative position: don't get out of the flow
+    </div>
+    <div class="div6">
+      box6
+    </div>
+    <hr>
+    <h3>Practice 1: Combine img and text</h3>
+    <div class="imgtext">
+      <div class="img">
+        <img src="img/lion1.jpeg" alt="This should be a lion">
+      </div>
+      <div class="text">
+        This is a lion. The words are used to demonstrate combining image and words.
+      </div>
+    </div>
+    <hr>
+    <h3>signature of image</h3>
+    <div class="signature">
+      <div class="img">
+        <img src="img/submit_button.gif" alt="Here should be an botton image">
+      </div>
+      <div class="text">
+        This is a image submit button.
+      </div>
+    </div>
+
+  </body>
+</html>

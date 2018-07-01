@@ -38,6 +38,7 @@
         5. bitwise:
           &, |，^, ~，<<,>>,>>>(unsigned left-shifting, filled with 0)
         6. ternary:
+          expression?true:false;
       */
       // 1. arithmetic:
       var a = 3710;
@@ -85,13 +86,241 @@
       console.log(c>>2);  // 001 = 1
       console.log((-10).toString(2));   // -1010：in memeory -> 11111111 11111111 11111111 11110110
       console.log((-10 << 2).toString(2)); // -101000: in memeory -> 11111111 11111111 11111111 11011000
+
     //   11111111 11111111 11111111 11110110
     //-> 11111111 11111111 11111111 11111101
-    //-> transfer to -original code = -11
+    //-> transfer to “-original code” = -11
       console.log((-10 >> 2).toString(2)); //-11 = -3
       console.log((-10 >>> 2).toString(2)); //111111111111111111111111111101
       console.log((-0xff).toString(2));// -11111111
       console.log(c<<2); // 11000 = 24
+
+
+      //6. ternary
+      console.log(3>0?'yes':'no');
+
+      /*
+        deferences with java
+        1. undefined -> a constant
+      */
+      var xx;
+      console.log(xx);  // undefined
+      console.log(typeof(x));
+      console.log(typeof(true));
+
+
+
+      /*
+        statement
+      */
+      // if
+      if(4 == x)  // constant at left to prevent errors
+        console.log("x=4");
+      else {
+        console.log("x!=4");
+      }
+
+      // switch
+      var sw = "c";
+      switch (sw) {
+        default:
+          console.log("default");
+          break;
+        case "a":
+          console.log("this is a");
+          break;
+        case "b":
+          console.log("this is b");
+          break;
+      }
+
+      //while
+      x=4;
+      // document object
+      document.write("<font color='lightblack'>");
+      while(x>0)
+      {
+        console.log("while loop");
+
+        document.write("while loop<br>");
+        x--;
+      }
+      document.write('</font>');
+
+      // for loop
+      document.write("<font color='green'>");
+      for(x=2;x<5;x++)
+      {
+        document.write("for loop<br>");
+      }
+      document.write('</font>');
+      document.write("<hr>");
+      // for each
+      var arr=[1,2,3,'hello',true];
+      var variable=5;
+      for(var key in arr)
+        document.write(arr[key]+"<br>");
+      var obj={
+        key1: "value1",
+        "a":"value2",
+        3: 57,
+        key4:x,
+        variable: variable
+      };
+      document.write("<hr>");
+      for(var key in obj)
+        document.write(key+","+obj[key]+"<br>");
+      document.write("<hr>");
+
+      document.write("<table cellspacing=5px >");
+      for(var i = 1 ; i <=9;i++ )
+      {
+        document.write("<tr>");
+        for(var j=1 ; j<=i ; j++)
+        {
+          document.write("<td style='border: 1px solid red'>"+j+"*"+j+"="+(i*j)+"</td>");
+        }
+        document.write("<tr>");
+      }
+      document.write("</table>");
+
+      document.write("<hr>");
+
+      /*
+          Array
+      */
+      //  define
+      arr = [23, 78, 100];
+      arr[4] = "lixingxing";  // length is changeable
+      arr[0] = true;  // can be any data type and function
+      for(var i = 0 ; i < arr.length ; i++)
+        document.write("arr["+i+"] ="+arr[i]+"<br>");
+      document.write("<hr>");
+      // define: 2nd type
+      arr = new Array(5); // length = 5
+      arr = new Array(4,5,6,true,"xing"); // specify elements
+      for(var i = 0 ; i < arr.length ; i++)
+        document.write("arr["+i+"] ="+arr[i]+"<br>");
+      document.write("<hr>");
+
+
+      /*
+        Function
+      */
+      function demo1(){
+        document.write("this is demo1<br>");
+        return ;
+      }
+      demo1();
+
+      function add(x, y=3){
+        document.write("arguments=");
+        for(var i = 0 ; i < arguments.length ; i++)
+          document.write(arguments[i]+" ");
+        document.write("<br>");
+        return x+y;
+      }
+
+      document.write("add(1,5) = "+add(1,5)+"<br>");
+      document.write("add(1)="+add(1)+": with default param<br>");
+      document.write("add(1,5,7,8,11) = "+add(1,5,7,8,11)+"<br>");
+      // don't have (), the funciton won't be called, print out the code
+      document.write("add="+add+"<br>");
+      document.write("<hr>");
+
+
+      // dynamical function
+      // use Object Function in js
+      // params: parameters, function body
+      var sum = new Function("x,y","var sum; sum=x+y; return sum;");
+      document.write("new Function(): 4+5 = "+sum(4,5)+"<br>");
+
+      // anonymous Function
+      var add = function(a, b){
+        return a+b;
+      };
+      document.write("anonymous function:11+12="+add(11,12)+"<br>");
+
+
+      /*
+          practices
+      */
+      document.write("<hr>");
+      document.write("<h3>Practices</h3>");
+      document.write("Get Maximum<br>");
+      document.write("Sort<br>");
+      document.write("Find element<br>");
+      document.write("Reverse Array<br>");
+      document.write("<hr>");
+      arr = [1,34,6,45,-1,34,-5,-6,7,7,-7,0,24];
+      document.write("target arr = "+arr+"<br>");
+      // self-invoking
+      (function(arr){
+        var max = Number.MIN_SAFE_INTEGER;
+        var min = Number.MAX_SAFE_INTEGER;
+        for(var i = 0; i< arr.length ; i++)
+        {
+          if(arr[i] > max)
+            max = arr[i];
+          if(arr[i] < min)
+            min = arr[i];
+        }
+        document.write("max value = "+max+'<br>');
+        document.write("min value ="+min+'<br>');
+      })(arr);
+
+      // bubbule sort
+      var bubbleSort = function(arr){
+        for(var i = arr.length-1 ; i >0 ; i--)
+        {
+          for(var j =0; j < i; j++){
+            if(arr[j]>arr[j+1]){
+              swap(arr,j,j+1);
+            }
+          }
+        }
+        function swap(arr,a,b){
+          var temp = arr[a];
+          arr[a] = arr[b];
+          arr[b] = temp;
+        }
+      };
+      bubbleSort(arr);
+      document.write("sort: arr = "+arr);
+      document.write("<hr>");
+      document.write("binary search function<br>");
+
+      // binary search
+      function binarySearch(arr, key){
+          var left=0;
+          var right=arr.length-1;
+          while(left < right){
+            // differences with java
+            // need Math.floor to get integer
+            var mid=Math.floor(left+(right-left)/2);
+            if(arr[mid] == key){
+              return mid
+            }
+            else if(arr[mid] < key){
+              left=mid+1;
+            }
+            else {
+              right=mid;
+            }
+          }
+          if(arr[left] == key)
+            return left;
+          else
+            return -left-1;
+      }
+      var key = -5;
+      document.write("sort: arr = "+arr+'<br>');
+      document.write("key = "+key+'<br>');
+      document.write("key's index = "+binarySearch(arr, key)+'<br>');
+      document.write("<hr>");
+      function println(val){
+        document.write(val+"<br>");
+      }
 
 
 

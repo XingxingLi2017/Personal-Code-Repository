@@ -511,4 +511,91 @@ for(var i = 0 ; i < 10 ; i++){
 }
 println("parseInt('0x110', 16) = "+parseInt('110',2));
 println("isNaN(12) = "+isNaN(12));
-println("regular expression")
+
+/*
+  Number
+*/
+println("<h3>Number</h3>")
+println("new Number(6).toString(2) = "+new Number(6).toString(2));
+/*
+  For in statement
+*/
+println("");
+println("traverse object -> for in statement")
+for( i in arr){
+  println("for( i in arr) -> i = "+i);
+  println("for( i in arr) -> arr[i] = "+arr[i]);
+}
+println("<hr>");
+
+/*
+  customized Object
+*/
+println("<h3>customized Object</h3>")
+println("use function to imitate OOP");
+
+function Person(){ // the equivalent of constructor
+  println("i'm person.");
+};
+var p1=new Person();
+// add fields dynamically
+p1.age=13;
+p1.name="Xing";
+p1.show=function(){
+  // use this to access the fields of this Object
+  println("Person.show is running. age = "+this.age+", name = "+this.name);
+};
+p1.show();
+
+// use constructor to define object
+
+function Chinese(name, age){
+  this.name=name;
+  this.age=age;
+  this.setName=function(name){
+    this.name=name;
+  };
+  this.getName=function(){
+    return this.name;
+  }
+};
+var p2=new Chinese("yang", 24);
+println("p2.name="+p2.name);
+println("p2.setName('zhang san')="+p2.setName('zhang san'));
+println("p2.getName()="+p2.getName());
+
+// use javascript Object Notation
+println("<hr>")
+println("use JSON to get Object");
+var p3={
+  name: 'person3',
+  getName: function(){
+    return this.name;
+  },
+  setName:function(name){
+    this.name=name;
+  }
+}
+println("p3.name="+p3.name);
+println("p3.setName('zhang san')="+p3.setName('zhang san'));
+println("p3.getName()="+p3.getName());
+println("p3['getName']="+p3['getName']);
+
+// use for in to traverse Object
+println("<hr>");
+for(i in p2){
+  println("i="+i+", p2[i] = "+p2[i]);
+  if(i == 'getName'){
+    println(p[i]());
+  }
+}
+
+
+
+
+
+
+
+
+
+//

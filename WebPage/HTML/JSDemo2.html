@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function println(str){
+        document.write(str+"<br>");
+      }
+
+      // callback function
+      var x = function(){
+        println('i am x');
+      }
+      var y = function(callback){
+        println('i am y');
+        callback();
+      }
+      y(x);
+      println(x);
+      println(y);
+      println("here, x is the callback function of y");
+      println("<hr>")
+
+      // no callback function
+      var cal = function(a,b,type){
+        // '===', restrict equal
+        // both value and datatype must be equal, can't do transform
+        //
+        if(type === "add"){
+          return a+b;
+        }else if (type ==="mul"){
+          return a*b;
+        }
+      }
+      println(cal(1,5,"add"));
+
+      // with callback function
+      var add = function(a,b){
+        return a+b;
+      }
+      var mul = function(a, b){
+        return a*b;
+      }
+        // with callback function， we can extend functions of the outer function
+      cal = function(a,b,callback){
+        return callback(a,b);
+      }
+      println(cal(4,5,add));
+      println(cal(4,5,mul));
+
+      // now we extend one function of cal
+      var doSomething = function(a,b) {
+        return 'this is doSomething function, a='+a+',b='+b;
+      }
+      println(cal(4,5,doSomething));
+
+      /*
+        anonymous function
+        simplify writing
+      */
+      println(cal(1,5,function(a, b){return a - b;}));
+
+      /*
+        callback function application
+      */
+      println("<hr>");
+      var arr = [
+        {num:10,
+          name:'apple'
+        },
+        {
+          num:2,
+          name:'orange'
+        },
+        {
+          num:16,
+          name:'cherry'
+        }
+      ];
+
+      arr.sort();
+      for(var i in arr){
+        println(arr[i].num+", "+arr[i].name);
+      }
+      arr.sort(function(n1,n2){
+        if(n1.num > n2.num){
+          return -1;
+        }else{
+          return 1;
+        }
+      });
+      println('after transfer callback function');
+      arr.sort();
+      for(var i in arr){
+        println(arr[i].num+", "+arr[i].name);
+      }
+      println("<hr>");
+      println('Promise');
+      /*
+        Promise Object
+        call different callback function based on different status
+        promise has two path: fulfill, reject
+      */
+      var promise = new Promise(function(resolve, reject){
+        // if work is done
+        var isDone=false;
+        if(isDone){
+          // the builtin function in Promise, used to pass data when work is done
+          resolve('done');
+        }else{
+          reject('sorry bro.');
+        }
+      });
+      // after resolve is done
+      // msgResolved is same as the parameter of function resolve(msg)
+      promise.then(function(msgResolved){
+        println(msgResolved+' homework is submitted!');
+      }).catch(function(res){
+        println(res + " err");
+      });
+
+      /* application */
+      var doHomework=function(){
+        return new Promise(function(resolve, reject){
+          resolve("homework is done");
+        });
+      };
+
+      var submitHomework =function(msg){
+        return new Promise(function(resolve, reject){
+          resolve(msg +' home work is submitted');
+        });
+      };
+
+      var confirm = function(msg){
+        return new Promise(function(resolve, reject){
+          resolve(msg + 'submitting is finished');
+        });
+      };
+
+      doHomework().then(function(res){
+        return submitHomework(res);
+      }).then(function(res){
+        return confirm(res);
+      }).then(function(res){
+        println('After confirm, homework is done.');
+      });
+      println('Promise is asynchorounized. Look at me!');
+      println('<hr>');
+    </script>
+
+  </body>
+</html>

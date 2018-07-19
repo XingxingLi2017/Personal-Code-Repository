@@ -586,7 +586,7 @@ println("<hr>");
 for(i in p2){
   println("i="+i+", p2[i] = "+p2[i]);
   if(i == 'getName'){
-    println(p[i]());
+    println(p2[i]());
   }
 }
 

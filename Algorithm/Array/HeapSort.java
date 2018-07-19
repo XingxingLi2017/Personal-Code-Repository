@@ -99,25 +99,23 @@ class SimpleHeap{
     // put the node i into the proper position in the heap;
     // the end indicate the boundary of the shift down range
     private void shiftDown(int i, int end){
-        int root = i;
-        int left;
-        int right;
-        while ((left = getLeftChild(root)) < end)
-        {
-            int target = root;
-            if(heap[target] < heap[left]){
-                target = left;
+        int target = i;
+        while (target < end)
+        {  
+            int l = getLeftChild(target);
+            int r = getRightChild(target);
+            int nextPosition = target;
+            if(l < end && heap[nextPosition] < heap[l]){
+                nextPosition = l;
             }
-            right = getRightChild(root);
-            // ensure the root will be the largest number in these three nodes
-            if(right < end && heap[target] < heap[right]){
-                target = right;
+            if(r < end && heap[nextPosition] < heap[r]){
+                nextPosition = r;
             }
-            if(target == root)
+            if(nextPosition == target)
                 return;
             else {
-                swap(root, target);
-                root = target;
+                swap(nextPosition, target);
+                target = nextPosition;
             }
         }
     }

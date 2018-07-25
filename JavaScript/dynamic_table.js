@@ -1,9 +1,6 @@
-
-
-
 jQuery(document).ready(function($){
 
-	/* 
+	/*
 		dynamicTable tool: manage the table element. update it dynamically
 
 		combine anonymous function and return object to separate private members from class
@@ -41,7 +38,7 @@ jQuery(document).ready(function($){
 		function _setNoItemsInfo(){
 			if(_table.length < 1) return; // haven't be configured.
 			var colspan = _headers != null && _headers.length > 0 ? 'colspan="'+_headers.length+'"':'';
-			var content = '<tr class="no-items"><td ' + colspan + ' style="text-align:center">' + 
+			var content = '<tr class="no-items"><td ' + colspan + ' style="text-align:center">' +
             _defaultText + '</td></tr>';
             if(_table.children('tbody').length > 0)
             	_table.children('tbody').html(content);
@@ -67,8 +64,8 @@ jQuery(document).ready(function($){
 			},
 			// append: if append the rows in data to the end of the table or re set the table
 			load: function(data, append){
-				if(_table.length < 1) 
-					return; 
+				if(_table.length < 1)
+					return;
 				_removeNoItemsInfo();
 				if(data && data.length > 0){
 					var rows = '';
@@ -103,8 +100,8 @@ jQuery(document).ready(function($){
 				return this;
 			},
 			setHeaders: function(){
-				if(_table.length < 1) 
-					return; 
+				if(_table.length < 1)
+					return;
 				_setHeaders();
 			},
 			clear: function(){
@@ -114,4 +111,3 @@ jQuery(document).ready(function($){
 		}
 	})();
 });
-

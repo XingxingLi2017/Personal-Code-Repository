@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id = "root"></div>
+    <script type="text/babel">
+        /*
+          props:
+            key
+            text
+            index
+            deleteHandler
+          states:
+            done
+        */
+        class ListItem extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              done: false,
+            };
+            this.todoBtn = this.todoBtn.bind(this);
+            this.cancelBtn = this.cancelBtn.bind(this);
+          }
+          todoBtn() {
+            this.setState((prevState) => {
+              return {
+                done: !prevState.done,
+              };
+            });
+          }
+          cancelBtn() {
+            console.log('cancelBtn is clicked');
+            this.props.deleteHandler(this.props.index);
+          }
+          render(){
+            const textStyle = {
+              textDecoration: this.state.done ? 'line-through' : 'none',
+              margin: '3px',
+              border: '1px solid lightblue',
+              padding: '1px',
+            };
+            return (
+              <div>
+                <button onClick ={this.todoBtn}>{this.state.done ? 'Done' : 'Todo'}</button>
+                <span style = {textStyle}>{this.props.text}</span>
+                <button onClick = {this.cancelBtn}>cancel</button>
+              </div>
+            );
+          }
+        }
+
+        /*
+          props
+            todos [{id,text},{}]
+            deleteHandler
+          states
+        */
+        class TodoList extends React.Component {
+          render() {
+            return (
+              <div>
+                {
+                  this.props.todos.map((e, index) => {
+                    return <ListItem
+                      text = {e.text}
+                      key = {e.id}
+                      index = {index}
+                      deleteHandler = {this.props.deleteHandler}
+                    />;
+                  })
+                }
+              </div>
+            );
+          }
+        }
+
+        class App extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+                todos: [
+                  {
+                    id: 1,
+                    text: 'first',
+                  },
+                  {
+                    id: 2,
+                    text: 'hello xingxing',
+                  }
+                ],
+            }
+            this.deleteHandler = this.deleteHandler.bind(this);
+            this.addTodoHandler = this.addTodoHandler.bind(this);
+          }
+          deleteHandler(todoIndex){
+            this.setState((prevState)=>{
+              let prevTodos = prevState.todos;
+              return {
+                todos: [...prevTodos.slice(0,todoIndex), ...prevTodos.slice(todoIndex+1, prevTodos.length)],
+              };
+            });
+          }
+          addTodoHandler(newTodoText) {
+            let newTodo = {
+              id: new Date(),
+              text: newTodoText,
+            }
+            this.setState((prevState)=>{
+              return {
+                todos: [...prevState.todos, newTodo],
+              };
+            });
+          }
+
+          render() {
+            return (
+              <div>
+                <TodoList todos={this.state.todos} deleteHandler = {this.deleteHandler}/>
+                <UserInput addTodoHandler={this.addTodoHandler}/>
+              </div>
+            );
+          }
+        }
+
+        /*
+          props:
+            addTodoHandler
+          states:
+            userInput: string
+        */
+        class UserInput extends React.Component {
+          constructor(props) {
+              super(props);
+              this.state = {
+                userInput: '',
+              };
+              this.onInputChange = this.onInputChange.bind(this);
+          }
+          onInputChange(event){
+              console.log('onInputChange is called');
+              this.setState({
+                userInput: event.target.value,
+              });
+              this.addBtn = this.addBtn.bind(this);
+          }
+          addBtn(){
+              console.log('addBtn is clicked');
+              this.props.addTodoHandler(this.state.userInput);
+          }
+          render() {
+            return (
+              <div>
+                <input type = 'text' onChange={this.onInputChange} name = 'todoInput' value = {this.state.userInput}/>
+                <button onClick={this.addBtn}>add todo</button>
+              </div>
+            );
+          }
+        }
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

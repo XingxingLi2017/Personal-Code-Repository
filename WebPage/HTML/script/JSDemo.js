@@ -76,13 +76,13 @@ console.log(c&3);   // 2 : 110 & 011 = 010 = 2
 console.log(c^3);   // 5 : 110^011 = 101 = 5
 console.log(c>>2);  // 001 = 1
 console.log((-10).toString(2));   // -1010：in memeory -> 11111111 11111111 11111111 11110110
-console.log((-10 << 2).toString(2)); // -101000: in memeory -> 11111111 11111111 11111111 11011000
+console.log("-1010 << 2", (-10 << 2).toString(2)); // -101000: in memeory -> 11111111 11111111 11111111 11011000
 
 //   11111111 11111111 11111111 11110110
 //-> 11111111 11111111 11111111 11111101
 //-> transfer to “-original code” = -11
-console.log((-10 >> 2).toString(2)); //-11 = -3
-console.log((-10 >>> 2).toString(2)); //111111111111111111111111111101
+console.log("-1010 >> 2 = ", (-10 >> 2).toString(2)); //-11 = -3
+console.log("(unsigned right shift) -1010 >>> 2 = ",(-10 >>> 2).toString(2)); //111111111111111111111111111101
 console.log((-0xff).toString(2));// -11111111
 console.log(c<<2); // 11000 = 24
 

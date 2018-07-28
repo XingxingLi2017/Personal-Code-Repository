@@ -8,24 +8,181 @@
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
   </head>
   <body>
+    <div id="root">
+    </div>
+
     <script type="text/babel">
       class Counter extends React.Component {
         constructor(props) {
           super(props);
+          console.log(`${this.props.name}: constructor`);
           this.state = {
             count: 0,
           };
+          this.addCount = this.addCount.bind(this);
+        }
+        // mount lifecycle
+        componentWillMount() {
+          console.log(`${this.props.name}: componentWillMount`);
+        }
+        componentDidMount() {
+          console.log(`${this.props.name}: componentDidMount`);
+        }
+        componentWillUnmount() {
+          console.log(`${this.props.name}: componentWillUnmount`);
+          clearInterval(this.interval);
+        }
+        // update lifecycle
+        componentWillReceiveProps(nextProps) {
+          console.log(`${this.props.name}: componentWillReceiveProps state.count=${this.state.count}`);
+        }
+        shouldComponentUpdate(nextProps, nextState) {
+          console.log(this.props.name,": shouldComponentUpdate: state.count = ", this.state.count,
+          ', next state count = ', nextState.count);
+          return true;
+        }
+        componentWillUpdate(nextProps, nextState) {
+          console.log(`${this.props.name}: componentWillUpdate this.state.count = ${this.state.count} nextState=${nextState.count}`);
+        }
+        componentDidUpdate(prevProps, prevState) {
+          console.log(`${this.props.name}: componentDidUpdate state.count = ${this.state.count} prevState = ${prevState.count}`);
+        }
+
+        addCount() {
+          console.log(`${this.props.name}: addCount`);
+          this.setState((prevState) => {
+            return {
+              count: prevState.count+1,
+            };
+          });
+          this.setState((prevState) => {
+            return {
+              count: prevState.count+1,
+            };
+          });
+          this.setState((prevState) => {
+            return {
+              count: prevState.count+1,
+            };
+          });
         }
         render() {
+          console.log (`${this.props.name}: render this.state.count=${this.state.count}`);
+          const btnStyle = {
+            'fontSize': this.props.size,
+            'color': this.props.color,
+          };
           return (
             <div>
-              <button>
-                {this.props.name} counts {this.state.counts}
+              <button onClick={this.addCount} style={btnStyle}>
+                {this.props.name}: {this.state.count}
               </button>
             </div>
           );
         }
       }
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          console.log(`${props.name}: constructor`);
+          this.state = {
+            counters:[{
+              name: 'left',
+              size: '20px',
+              color: 'black'
+            },{
+              name: 'right',
+              size: '20px',
+              color: 'black'
+            }],
+            showCounter: true
+          };
+          this.changeSize = this.changeSize.bind(this);
+          this.changeColor = this.changeColor.bind(this);
+        }
+        // mounting
+        // Mount
+        componentWillMount () {
+          console.log(`${this.props.name}: componentWillMount`);
+        }
+        componentDidMount () {
+          console.log(`${this.props.name}: componentDidMount` ) ;
+        }
+        componentWillUnmount () {
+          console.log(`${this.props.name}: componentWillUnmount` ) ;
+        }
+        // update
+        componentWillReceiveProps(){
+          console.log(`${this.props.name}: componentWillReceiveProps`);
+        }
+        shouldComponentUpdate(){
+          console.log(`${this.props.name}: shouldComponentUpdate`);
+          return true ;
+        }
+        componentWillUpdate(){
+          console.log(`${this.props.name}: componentWillUpdate`);
+        }
+        componentDidUpdate (){
+          console.log(`${this.props.name}: componentDidUpdate`);
+        }
+        changeSize(){
+          this.setState((prevState) => {
+            const counters = prevState.counters;
+            const newCounters = counters.map((e,index)=> {
+              return {
+                name: e.name,
+                size: e.size == '30px' ? '40px' : '30px',
+                color: e.color
+              };
+            });
+            return {
+              counters:newCounters,
+            };
+          });
+        }
+        changeColor() {
+          this.setState((prevState) => {
+            const counters = prevState.counters;
+            const newCounters = counters.map((e,index)=> {
+              return {
+                name: e.name,
+                size: e.size,
+                color: e.color == 'black' ? 'lightblue' : 'black',
+              };
+            });
+            return {
+              counters:newCounters,
+            };
+          });
+        }
+        render() {
+          return (
+            <div>
+              <button onClick = {this.changeColor}>change Color</button>
+              <button onClick = {this.changeSize}>change Size</button>
+              <button onClick = {() => {this.setState((prevState) => {
+                return {
+                  showCounter: !prevState.showCounter
+                }
+              })}}>{this.state.showCounter ? 'hide buttons' : 'show buttons'}</button>
+              {
+                this.state.showCounter ? (<div>
+                    {this.state.counters.map((e, index) => {
+                        return (
+                          <Counter key={e.name} name={e.name} size={e.size} color={e.color} />
+                        );
+                      })
+                    }
+                  </div>) : null
+              }
+
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App name="app" />, document.getElementById("root"));
     </script>
 
   </body>

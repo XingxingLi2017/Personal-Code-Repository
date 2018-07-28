@@ -8,8 +8,20 @@
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
   </head>
   <body>
-      <script type="text/babel">
-        
+      <input type="button" name="" value="demo window object" onclick="windowObjectDemo()" />
+      <script type="text/javascript">
+          function windowObjectDemo() {
+            var name = window.navigator.appName;
+            var version = window.navigator.appVersion;
+            // console.log(name + ", " + version);
+            console.log(name);
+            console.log(version);
+            var pro = location.protocol;
+            console.log(pro);
+            var text = location.href;
+            console.log(text);
+            // location.href = "http://www.google.com";
+          }
       </script>
   </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>This is a rogue advertisement</h1>
+    <button type="button" onclick="window.close()"> close </button>
+    <script type="text/javascript">
+        onbeforeunload = ()=>{
+          open("./ad.html",'_blank',"width=400,length=400");
+          return "sure to live?";
+        }
+        setInterval(()=>{
+          console.log("interval");
+          window.focus();
+        }, 1000);
+    </script>
+  </body>
+</html>

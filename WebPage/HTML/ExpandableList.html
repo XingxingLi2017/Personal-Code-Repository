@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Expandable List</title>
+    <style media="screen">
+        dl {
+          font-size: 16px
+        }
+        .dl-class a {
+          text-decoration: none
+
+        }
+        .dl-class a:link, a:visited {
+          color: #1D8348;
+        }
+        .dl-class a:active {
+          color: red;
+        }
+        .dl-class-close {
+          height: 16px;
+          overflow: hidden;
+        }
+        .dl-class-open {
+          height: 84px;
+          overflow: visible;
+        }
+    </style>
+  </head>
+  <body>
+    <dl class="dl-class dl-class-close">
+        <a href="javascript:void(0)"><dt>The title of the list 1</dt></a>
+          <dd>the first item</dd>
+          <dd>the second item</dd>
+          <dd>the third item</dd>
+          <dd>the forth item</dd>
+    </dl>
+    <dl class="dl-class dl-class-close">
+        <a href="javascript:void(0)"><dt>The title of the list 2</dt></a>
+          <dd>list2: the first item</dd>
+          <dd>list2: the second item</dd>
+          <dd>list2: the third item</dd>
+          <dd>list2: the forth item</dd>
+    </dl>
+    <script type="text/javascript">
+          // get event source and processed nodes
+          var dlNodes= document.getElementsByClassName('dl-class')
+          for (var i = 0 ; i < dlNodes.length ; i++) {
+            var a = dlNodes[i].getElementsByTagName('a')[0];
+            a.addEventListener('click', (event)=>{
+              for(var j = 0 ; j < dlNodes.length ; j++) {
+                dlNodes[j].className = "dl-class dl-class-close"
+              }
+              var currNode = event.target;
+              while (currNode != null && currNode.nodeName != 'DL') {
+                currNode = currNode.parentNode
+              }
+               if (currNode.className == 'dl-class dl-class-close') {
+                 currNode.className = 'dl-class dl-class-open'
+               } else {
+                 currNode.className = 'dl-class dl-class-close'
+               }
+            })
+          }
+    </script>
+
+  </body>
+</html>

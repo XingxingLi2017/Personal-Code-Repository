@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Friends List</title>
+    <style media="screen">
+      table ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        background-color: lightgrey;
+        display: none;
+      }
+      table {
+        border: #8080ff 1px solid;
+        width: 200px;
+      }
+      table td {
+        border: #8080ff 1px solid;
+        background-color: #f3c98f;
+        padding: 0px;
+      }
+      table tr td a {
+        text-decoration: none;
+      }
+      table tr td a:link, a:visited {
+        color: #1f6df1;
+      }
+      /* predefined styles */
+      .open{
+        display: block;
+      }
+      .close {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <table id = "friends-list">
+      <tr>
+        <td>
+            <a href="javascript:void(0)">Friends</a>
+            <ul>
+              <li>James</li>
+              <li>Rose</li>
+              <li>Lisa</li>
+            </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <a href="javascript:void(0)">Friends</a>
+            <ul>
+              <li>AAAAA</li>
+              <li>BBBBB</li>
+              <li>CCCCC</li>
+            </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <a href="javascript:void(0)">Friends</a>
+            <ul>
+              <li>DDDDD</li>
+              <li>eeeeee</li>
+              <li>ccccc</li>
+            </ul>
+        </td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      (function(){
+        var table = document.getElementById('friends-list')
+        var trs = table.getElementsByTagName('tr')
+
+        for (var i = 0 ; i < trs.length ; i++) {
+          var link = trs[i].getElementsByTagName('a')[0];
+
+          // bind listener
+          link.addEventListener('click',(event)=>{
+            // reset all the ul class
+            for(var j = 0 ; j < trs.length ; j++) {
+                var td = trs[j].getElementsByTagName('td')[0];
+                var ul = td.getElementsByTagName('ul')[0]
+                ul.className = 'close'
+            }
+
+            // set the current nodes's ul class
+            var curr = event.target
+            while(curr != null && curr.nodeName != 'UL'){
+              curr = curr.nextSibling
+            }
+            
+            if (curr != null) {
+              curr.className =  curr.className == 'open' ? 'close' : 'open'
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

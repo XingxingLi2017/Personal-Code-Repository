@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ref Module</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id = 'root'></div>
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            userInput: "",
+          };
+          this.onInputChange = this.onInputChange.bind(this);
+        }
+        onInputChange(e) {
+          console.log(e.target.value);
+          // asynchronized, copy the value to reserve
+          const target = e.target;
+          this.setState((prevState)=>{
+            return {
+              userInput : target.value,
+            }
+          });
+        }
+        render() {
+          console.log(this.state.userInput);
+          return (
+            <div>
+                <input value = {this.state.userInput} onChange = {this.onInputChange}/>
+                <button>Add</button>
+            </div>
+          );
+        }
+      }
+
+      class App1 extends React.Component {
+
+      }
+      ReactDOM.render(<App/>, document.getElementById('root'))
+
+    </script>
+
+  </body>
+</html>

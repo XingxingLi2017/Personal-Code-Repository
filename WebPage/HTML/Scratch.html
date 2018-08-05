@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Scratch</title>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
-  </head>
-  <body>
-      <input type="checkbox" id = 'test' />
-      <script type="text/javascript">
-        var node = document.getElementById('test')
-        console.log(node.checked);
-        node.checked = true;
-      </script>
+    <head>
+        <meta charset="utf-8">
+        <title>Scratch</title>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    </head>
+    <body>
+        <form id = "userInfo" onsubmit="return checkForm()">
+            username: <input type="text" name="username" value="" onblur="checkUser()"/>
+            <span id = "userspan"></span>
+            <br/>
+            password: <input type="text" name="password" value="" /> <br>
+            <input type="submit" name="" value="submit" />
+        </form>
 
-  </body>
+        <button type="button" onclick="mySubmit()">customized submit</button>
+
+        <script type="text/javascript">
+            function checkUser() {
+                var user = document.getElementsByName("username")[0];
+                var name = user.value;
+                var userspan = document.getElementById("userspan");
+                // reg exp
+                // var re = new RegExp("^[a-z]{4}$", 'i');
+                var re = /^[a-z]{4}$/i;
+                if (re.test(name)) {
+                    userspan.innerHTML = 'correct'.fontcolor("green");
+                    return true;
+                } else {
+                    userspan.innerHTML = 'wrong'.fontcolor("red");
+                    return false;
+                }
+            }
+
+            function checkForm() {
+                return checkUser();
+            }
+            function mySubmit () {
+                var form = document.getElementById('userInfo')
+                if (checkUser()) form.submit();
+            }
+        </script>
+
+    </body>
 </html>

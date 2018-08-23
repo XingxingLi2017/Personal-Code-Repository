@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bookshelf> 
+  <book> 
+    <name I="xing">book1</name>  
+    <author>author1</author>  
+    <price>39.00</price>
+    <price>23.00</price> 
+  </book>  
+  <book> 
+    <name id="1" I="li">new author2</name>  
+    <author>author2</author>  
+    <price>2.00</price> 
+  </book> 
+</bookshelf>

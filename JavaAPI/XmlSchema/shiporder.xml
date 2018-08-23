@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xing:shiporder xmlns:xing = "http://www.thexingli.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.thexingli.com shiporderschema.xsd"
+	orderid="1">
+	<xing:orderperson>xing</xing:orderperson>
+	<xing:shipto>
+		<xing:name>xingxing</xing:name>
+		<xing:address>1111 navy army drive</xing:address>
+		<xing:city>arlington</xing:city>
+		<xing:country>american</xing:country>
+	</xing:shipto>
+	<xing:item>
+		<xing:title>laptop</xing:title>
+		<xing:note>note</xing:note>
+		<xing:quantity>1</xing:quantity>
+		<xing:price>4.0</xing:price>
+	</xing:item>
+</xing:shiporder>

@@ -67,6 +67,7 @@ div{
   background-color: #0cf;
   width: 300px;
   height: 150px;
+  /* clear: both; */
   /* float: left; */
   /* clear: left; */
 }
